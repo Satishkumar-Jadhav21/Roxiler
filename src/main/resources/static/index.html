@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+<div class="container mx-auto p-6">
+    <!-- Month Selector and Search -->
+    <div class="flex gap-4 mb-6">
+        <select id="monthSelect" class="p-2 border rounded w-40">
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March" selected>March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+        </select>
+
+        <input type="text" id="searchInput" placeholder="Search transactions..."
+               class="p-2 border rounded flex-grow">
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="grid grid-cols-3 gap-4 mb-6" id="statsContainer"></div>
+
+    <!-- Transactions Table -->
+    <div class="bg-white rounded shadow mb-6">
+        <table class="w-full" id="transactionsTable">
+            <thead>
+            <tr class="border-b">
+                <th class="p-3 text-left">Title</th>
+                <th class="p-3 text-left">Description</th>
+                <th class="p-3 text-left">Price</th>
+                <th class="p-3 text-left">Category</th>
+                <th class="p-3 text-left">Sold</th>
+            </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+
+        <!-- Pagination -->
+        <div class="flex justify-between p-3">
+            <button id="prevBtn" class="px-4 py-2 bg-blue-600 text-white rounded">Previous</button>
+            <span id="pageInfo">Page 1</span>
+            <button id="nextBtn" class="px-4 py-2 bg-blue-600 text-white rounded">Next</button>
+        </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="grid grid-cols-2 gap-6">
+        <div class="bg-white p-4 rounded shadow">
+            <h2 class="text-xl mb-4">Price Distribution</h2>
+            <canvas id="barChart"></canvas>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+            <h2 class="text-xl mb-4">Category Distribution</h2>
+            <canvas id="pieChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
