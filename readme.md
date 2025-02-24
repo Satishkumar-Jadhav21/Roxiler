@@ -67,10 +67,6 @@ CREATE TABLE products (
 
 ## Installation & Setup
 
-1. **Clone Repository**:
-```bash
-git clone https://github.com/your-username/roxiler-product-analytics.git
-cd roxiler-product-analytics
 ```
 
 2. **Configure Database**:
@@ -114,11 +110,6 @@ url  POST http://localhost:8080/api/initialize
 | `/pie-chart` | GET | month | Category distribution |
 | `/combined` | GET | month | All combined data |
 
-**Example Request**:
-```bash
-curl "http://localhost:8080/transactions?month=March&page=1&search=watch"
-```
-
 ## Frontend Access
 Access dashboard at: `http://localhost:8080`
 
@@ -139,10 +130,6 @@ Access dashboard at: `http://localhost:8080`
    server.port=8081
    ```
 
-## Make Sure:
-1. Replace `your-username` in clone URL .
-2. Update application.properties with your MySQL credentials.
-3. Verify port numbers match your configuration.
 
 
 
